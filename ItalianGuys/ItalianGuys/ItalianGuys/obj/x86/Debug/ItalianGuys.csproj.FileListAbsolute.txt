@@ -1,0 +1,9 @@
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\tiles.xnb
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Levels\Level1.xnb
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\ItalianGuys.exe
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\ItalianGuys.pdb
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\XTile.dll
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\obj\x86\Debug\ItalianGuys.csprojResolveAssemblyReference.cache
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\obj\x86\Debug\ItalianGuys.exe
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\obj\x86\Debug\ItalianGuys.pdb
