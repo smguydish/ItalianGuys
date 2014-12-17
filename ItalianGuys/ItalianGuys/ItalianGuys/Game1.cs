@@ -23,10 +23,10 @@ namespace ItalianGuys
 
         Map map;
         IDisplayDevice mapDisplayDevice;
-        xTile.Dimensions.Rectangle viewport;
+        //xTile.Dimensions.Rectangle viewport;
 
         Texture2D mario;
-        Sprite test;
+        Player test;
 
         public Game1()
         {
@@ -67,10 +67,10 @@ namespace ItalianGuys
             map.LoadTileSheets(mapDisplayDevice);
             xTile.Layers.Layer layer = map.GetLayer("Foreground");
 
-            viewport = new xTile.Dimensions.Rectangle(new xTile.Dimensions.Size(800, 600));
+            World.viewport = new xTile.Dimensions.Rectangle(new xTile.Dimensions.Size(800, 600));
 
             mario = Content.Load<Texture2D>("tiles");
-            test = new Sprite(new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), mario, new Rectangle(0, 0, 48, 48), Vector2.Zero);
+            test = new Player(new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), mario, new Rectangle(0, 0, 48, 48), Vector2.Zero, map);
         }
 
         /// <summary>
@@ -94,9 +94,8 @@ namespace ItalianGuys
                 this.Exit();
 
             map.Update(gameTime.ElapsedGameTime.Milliseconds);
-            viewport.X++;
-
             test.Update(gameTime);
+            World.viewport.X++;
 
             base.Update(gameTime);
         }
@@ -109,7 +108,7 @@ namespace ItalianGuys
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            map.Draw(mapDisplayDevice, viewport);
+            map.Draw(mapDisplayDevice, World.viewport);
 
             spriteBatch.Begin();
             test.Draw(spriteBatch);
