@@ -116,7 +116,7 @@ namespace ItalianGuys
                 onGround = false;
             }
 
-            if (kb.IsKeyDown(Keys.Left) && World.viewport.X > 0)
+            if (kb.IsKeyDown(Keys.Left) && World.viewport.X >= 0)
             {
                 if (this.location.X > WalkableArea.Left)
                     this.location.X -= 5;
