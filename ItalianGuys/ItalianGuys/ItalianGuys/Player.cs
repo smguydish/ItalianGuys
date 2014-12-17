@@ -14,6 +14,9 @@ namespace ItalianGuys
         public float gravityTimerMax = 10f;
         public float gravity = 25f;
         private xTile.Map map;
+        public Rectangle WalkableArea = new Rectangle(200, 0, 400, 400);
+
+        public bool onGround = false;
 
         public Player(
            Vector2 location,
@@ -28,13 +31,15 @@ namespace ItalianGuys
 
         public xTile.Tiles.Tile CollisionTest(Vector2 point)
         {
-            point.X = (int)point.X / 48 + World.viewport.X / 48;
-            point.Y = (int)point.Y / 48;
+            point.X = (int)((point.X + World.viewport.X) / 48f);
+            point.Y = (int)(point.Y / 48);
 
             if (point.X < map.DisplaySize.Width / 48 && point.Y < map.DisplaySize.Height / 48 && point.X >= 0 && point.Y >= 0)
             {
                 xTile.Tiles.Tile tile = map.GetLayer("Foreground").Tiles[(int)point.X, (int)point.Y];
-
+                if (tile != null)
+                {
+                }
                 return tile;
             }
 
@@ -70,7 +75,7 @@ namespace ItalianGuys
             KeyboardState kb = Keyboard.GetState();
 
             gravityTimer += (float)gameTime.ElapsedGameTime.Milliseconds;
-            if (gravityTimer > gravityTimerMax)
+            if (gravityTimer > gravityTimerMax && !onGround)
             {
                 this.velocity.Y += gravity;
                 gravityTimer = 0f;
@@ -78,22 +83,25 @@ namespace ItalianGuys
 
 
             // Check collision below
-            xTile.Tiles.Tile tile = CollisionTest(new Vector2(this.Center.X, this.Location.Y + this.BoundingBoxRect.Height));
+            xTile.Tiles.Tile tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height),
+                                                      new Vector2(this.Location.X+this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height - 1)
+                                                      );
 
             if (tile != null)
             {
-                if (this.velocity.Y != 0)
-                {
-                    this.velocity.Y = 0;
-                    this.location.Y -= this.location.Y % 48;
-                }
+                onGround = true;
+                this.velocity.Y = 0;
+                this.location.Y -= this.location.Y % 48;
             }
+            else
+                onGround = false;
 
             // Check collision above
-            tile = CollisionEdgeTest(new Vector2(this.Location.X+5, this.Location.Y), new Vector2(this.Location.X+this.BoundingBoxRect.Width-5, this.Location.Y));
+            tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X+this.BoundingBoxRect.Width, this.Location.Y));
 
             if (tile != null)
             {
+                
                 if (this.velocity.Y != 0)
                 {
                     this.velocity.Y = 0.1f;
@@ -101,15 +109,48 @@ namespace ItalianGuys
                 }
             }
 
-            if (kb.IsKeyDown(Keys.Space) && this.velocity.Y == 0)
+
+            if (kb.IsKeyDown(Keys.Space) && onGround)
             {
-                this.velocity = new Vector2(0, -500);
+                this.velocity = new Vector2(0, -700);
+                onGround = false;
             }
-            if (kb.IsKeyDown(Keys.Left))
-                World.viewport.X -= 5;
+
+            if (kb.IsKeyDown(Keys.Left) && World.viewport.X > 0)
+            {
+                if (this.location.X > WalkableArea.Left)
+                    this.location.X -= 5;
+                else
+                    World.viewport.X -= 5;
+
+                tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height - 1));
+
+                if (tile != null)
+                {
+                    if (this.location.X > WalkableArea.Left)
+                        this.location.X += 5;
+                    else
+                        World.viewport.X += 5;
+                }
+            }
 
             if (kb.IsKeyDown(Keys.Right))
-                World.viewport.X += 5;
+            {
+                if (this.location.X < WalkableArea.Right)
+                    this.location.X += 5;
+                else
+                    World.viewport.X += 5;
+
+                tile = CollisionEdgeTest(new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y), new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height - 1));
+
+                if (tile != null)
+                {
+                    if (this.location.X < WalkableArea.Right)
+                        this.location.X -= 5;
+                    else
+                        World.viewport.X -= 5;
+                }
+            }
 
 
 
