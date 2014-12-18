@@ -9,14 +9,10 @@ namespace ItalianGuys
 {
     class Sprite
     {
-        public Texture2D Texture;
+        protected Dictionary<string, AnimationStrip> animations = new Dictionary<string, AnimationStrip>();
+        protected string currentAnimation;
 
-        protected List<Rectangle> frames = new List<Rectangle>();
-        private int frameWidth = 0;
-        private int frameHeight = 0;
-        private int currentFrame;
-        private float frameTime = 0.1f;
-        private float timeForCurrentFrame = 0.0f;
+        private xTile.Map map;
 
         private Color tintColor = Color.White;
         private float rotation = 0.0f;
@@ -27,26 +23,21 @@ namespace ItalianGuys
 
         public object tag;
 
-
         protected Vector2 location = Vector2.Zero;
         protected Vector2 velocity = Vector2.Zero;
         protected Vector2 origin = Vector2.Zero;
 
         public Sprite(
             Vector2 location,
-            Texture2D texture,
-            Rectangle initialFrame,
-            Vector2 velocity)
+            Vector2 velocity,
+            xTile.Map map)
         {
             this.location = location;
-            Texture = texture;
             this.velocity = velocity;
+            this.map = map;
 
-            frames.Add(initialFrame);
-            frameWidth = initialFrame.Width;
-            frameHeight = initialFrame.Height;
 
-            this.origin = new Vector2(frameWidth / 2, frameHeight / 2);
+           // this.origin = new Vector2(frameWidth / 2, frameHeight / 2);
 
             tag = null;
 
@@ -68,7 +59,7 @@ namespace ItalianGuys
 
         public Vector2 Origin
         {
-            get { return origin; }
+            get { return new Vector2(animations[currentAnimation].FrameWidth/2, animations[currentAnimation].FrameHeight/2); }
             set { origin = value; }
         }        
 
@@ -84,25 +75,9 @@ namespace ItalianGuys
             set { rotation = value % MathHelper.TwoPi; }
         }
 
-        public int Frame
-        {
-            get { return currentFrame; }
-            set
-            {
-                currentFrame = (int)MathHelper.Clamp(value, 0,
-                frames.Count - 1);
-            }
-        }
-
-        public float FrameTime
-        {
-            get { return frameTime; }
-            set { frameTime = MathHelper.Max(0, value); }
-        }
-
         public Rectangle Source
         {
-            get { return frames[currentFrame]; }
+            get { return animations[currentAnimation].FrameRectangle; }
         }
 
         public Rectangle Destination
@@ -112,8 +87,8 @@ namespace ItalianGuys
                 return new Rectangle(
                     (int)location.X,
                     (int)location.Y,
-                    frameWidth,
-                    frameHeight);
+                    animations[currentAnimation].FrameWidth,
+                    animations[currentAnimation].FrameHeight);
             }
         }
 
@@ -122,7 +97,7 @@ namespace ItalianGuys
             get
             {
                 return location +
-                    new Vector2(frameWidth / 2, frameHeight / 2);
+                    new Vector2(animations[currentAnimation].FrameWidth / 2, animations[currentAnimation].FrameHeight / 2);
             }
         }
 
@@ -133,9 +108,51 @@ namespace ItalianGuys
                 return new Rectangle(
                     (int)location.X + BoundingXPadding,
                     (int)location.Y + BoundingYPadding,
-                    frameWidth - (BoundingXPadding * 2),
-                    frameHeight - (BoundingYPadding * 2));
+                    animations[currentAnimation].FrameWidth - (BoundingXPadding * 2),
+                    animations[currentAnimation].FrameHeight - (BoundingYPadding * 2)
+                    );
             }
+        }
+
+        public virtual xTile.Tiles.Tile CollisionTest(Vector2 point)
+        {
+            point.X = (int)((point.X + World.viewport.X) / 48f);
+            point.Y = (int)(point.Y / 48);
+
+            if (point.X < map.DisplaySize.Width / 48 && point.Y < map.DisplaySize.Height / 48 && point.X >= 0 && point.Y >= 0)
+            {
+                xTile.Tiles.Tile tile = map.GetLayer("Foreground").Tiles[(int)point.X, (int)point.Y];
+                if (tile != null)
+                {
+                }
+                return tile;
+            }
+
+            return null;
+        }
+
+
+        public virtual xTile.Tiles.Tile CollisionEdgeTest(Vector2 point1, Vector2 point2)
+        {
+            xTile.Tiles.Tile tile1 = CollisionTest(point1);
+            xTile.Tiles.Tile tile2 = CollisionTest(point2);
+
+            if (tile1 != null && tile2 != null)
+            {
+                // return whichever is closer to player center
+                float dist1 = Vector2.Distance(point1, Center);
+                float dist2 = Vector2.Distance(point2, Center);
+
+                if (dist1 < dist2)
+                    return tile1;
+                else
+                    return tile2;
+            }
+
+            if (tile1 != null)
+                return tile1;
+
+            return tile2;
         }
 
         public bool IsBoxColliding(Rectangle OtherBox)
@@ -152,38 +169,62 @@ namespace ItalianGuys
                 return false;
         }
 
-        public void AddFrame(Rectangle frameRectangle)
+        public void PlayAnimation(string name)
         {
-            frames.Add(frameRectangle);
+            if (!(name == null) && animations.ContainsKey(name))
+            {
+                currentAnimation = name;
+                animations[name].Play();
+            }
+        }
+
+        private void updateAnimation(GameTime gameTime)
+        {
+            if (animations.ContainsKey(currentAnimation))
+            {
+                if (animations[currentAnimation].FinishedPlaying)
+                {
+                    PlayAnimation(animations[currentAnimation].NextAnimation);
+                }
+                else
+                {
+                    animations[currentAnimation].Update(gameTime);
+                }
+            }
         }
 
         public virtual void Update(GameTime gameTime)
         {
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            timeForCurrentFrame += elapsed;
-
-            if (timeForCurrentFrame >= FrameTime)
-            {
-                currentFrame = (currentFrame + 1) % (frames.Count);
-                timeForCurrentFrame = 0.0f;
-            }
+            updateAnimation(gameTime);
 
             location += (velocity * elapsed);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(
-                Texture,
-                Center,
-                Source,
-                tintColor,
-                rotation,
-                origin,
-                1.0f,
-                this.FlipHorizontal ? SpriteEffects.FlipHorizontally : SpriteEffects.None,
-                0.0f);
+            if (animations.ContainsKey(currentAnimation))
+            {
+
+                SpriteEffects effect = SpriteEffects.None;
+
+                if (FlipHorizontal)
+                {
+                    effect = SpriteEffects.FlipHorizontally;
+                }
+
+                spriteBatch.Draw(
+                    animations[currentAnimation].Texture,
+                    Center,
+                    Source,
+                    tintColor,
+                    rotation,
+                    Origin,
+                    1.0f,
+                    effect, 0);
+            }
+
         }
 
     }

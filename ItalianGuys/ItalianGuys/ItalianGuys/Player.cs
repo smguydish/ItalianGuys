@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 
 namespace ItalianGuys
 {
@@ -13,61 +14,101 @@ namespace ItalianGuys
         public float gravityTimer = 0f;
         public float gravityTimerMax = 10f;
         public float gravity = 25f;
-        private xTile.Map map;
         public Rectangle WalkableArea = new Rectangle(200, 0, 400, 400);
 
         public bool onGround = false;
 
         public Player(
+           ContentManager content,
            Vector2 location,
-           Texture2D texture,
-           Rectangle initialFrame,
            Vector2 velocity,
            xTile.Map map)
-            : base(location, texture, initialFrame, velocity)
+            : base(location, velocity, map)
         {
-            this.map = map;
-        }
+            // mario, new Rectangle(0, 0, 48, 48)
 
-        public xTile.Tiles.Tile CollisionTest(Vector2 point)
-        {
-            point.X = (int)((point.X + World.viewport.X) / 48f);
-            point.Y = (int)(point.Y / 48);
+            animations.Add("idle",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Sprites\Player\Mario"),
+                    30,
+                    "idle",
+                    139,
+                    1));
+            animations["idle"].LoopAnimation = true;
 
-            if (point.X < map.DisplaySize.Width / 48 && point.Y < map.DisplaySize.Height / 48 && point.X >= 0 && point.Y >= 0)
-            {
-                xTile.Tiles.Tile tile = map.GetLayer("Foreground").Tiles[(int)point.X, (int)point.Y];
-                if (tile != null)
-                {
-                }
-                return tile;
-            }
+            animations.Add("run",
+                              new AnimationStrip(
+                                  content.Load<Texture2D>(@"Sprites\Player\Mario"),
+                                  34,
+                                  "run",
+                                  0,
+                                  2));
+            animations["run"].LoopAnimation = true;
 
-            return null;
-        }
+            animations.Add("jump",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Sprites\Player\Mario"),
+                    34,
+                    "jump",
+                    102,
+                    1));
+            float i = animations["jump"].FrameLength;
+
+            animations["jump"].LoopAnimation = false;
+            animations["jump"].FrameLength = 0.7f;
+            animations["jump"].NextAnimation = "idle";
+
+            animations.Add("die",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Sprites\Player\Mario"),
+                    34,
+                    "die",
+                    171,
+                    1));
+            animations["die"].LoopAnimation = false;
 
 
-        public xTile.Tiles.Tile CollisionEdgeTest(Vector2 point1, Vector2 point2)
-        {
-            xTile.Tiles.Tile tile1 = CollisionTest(point1);
-            xTile.Tiles.Tile tile2 = CollisionTest(point2);
+            animations.Add("idleBig",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Sprites\Player\marioBig"),
+                    32,
+                    "idleBig",
+                    128,
+                    1));
+            animations["idleBig"].LoopAnimation = true;
 
-            if (tile1 != null && tile2 != null)
-            {
-                // return whichever is closer to player center
-                float dist1 = Vector2.Distance(point1, Center);
-                float dist2 = Vector2.Distance(point2, Center);
+            animations.Add("runBig",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Sprites\Player\marioBig"),
+                    32,
+                    "run",
+                    0,
+                    3));
+            animations["runBig"].LoopAnimation = true;
 
-                if (dist1 < dist2)
-                    return tile1;
-                else
-                    return tile2;
-            }
+            animations.Add("Crouch",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Sprites\Player\marioBig"),
+                    32,
+                    "run",
+                    160,
+                    1));
+            animations["Crouch"].LoopAnimation = true;
 
-            if (tile1 != null)
-                return tile1;
+            animations.Add("jumpBig",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Sprites\Player\marioBig"),
+                    32,
+                    "jumpBig",
+                    96,
+                    1));
+            float k = animations["jumpBig"].FrameLength;
 
-            return tile2;
+            animations["jumpBig"].LoopAnimation = false;
+            animations["jumpBig"].FrameLength = 0.5f;
+            animations["jumpBig"].NextAnimation = "idleBig";
+
+            currentAnimation = "idle";
         }
 
         public override void Update(GameTime gameTime)
@@ -90,8 +131,9 @@ namespace ItalianGuys
             if (tile != null)
             {
                 onGround = true;
+                currentAnimation = "idle";
                 this.velocity.Y = 0;
-                this.location.Y -= this.location.Y % 48;
+                this.location.Y -= (this.location.Y+animations[currentAnimation].FrameHeight) % 48;
             }
             else
                 onGround = false;
@@ -113,6 +155,7 @@ namespace ItalianGuys
             if (kb.IsKeyDown(Keys.Space) && onGround)
             {
                 this.velocity = new Vector2(0, -700);
+                currentAnimation = "jump";
                 onGround = false;
             }
 

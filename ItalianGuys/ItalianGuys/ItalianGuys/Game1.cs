@@ -70,7 +70,7 @@ namespace ItalianGuys
             World.viewport = new xTile.Dimensions.Rectangle(new xTile.Dimensions.Size(800, 600));
 
             mario = Content.Load<Texture2D>("tiles");
-            test = new Player(new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), mario, new Rectangle(0, 0, 48, 48), Vector2.Zero, map);
+            test = new Player(this.Content, new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), Vector2.Zero, map);
         }
 
         /// <summary>
