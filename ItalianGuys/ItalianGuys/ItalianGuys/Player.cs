@@ -14,9 +14,10 @@ namespace ItalianGuys
         public float gravityTimer = 0f;
         public float gravityTimerMax = 10f;
         public float gravity = 25f;
-        public Rectangle WalkableArea = new Rectangle(200, 0, 400, 400);
+        public Rectangle WalkableArea = new Rectangle(250, 0, 250, 400);
 
         public bool onGround = false;
+        public bool isBig = true;
 
         public Player(
            ContentManager content,
@@ -87,14 +88,14 @@ namespace ItalianGuys
                     3));
             animations["runBig"].LoopAnimation = true;
 
-            animations.Add("Crouch",
+            animations.Add("crouch",
                 new AnimationStrip(
                     content.Load<Texture2D>(@"Sprites\Player\marioBig"),
                     32,
                     "run",
                     160,
                     1));
-            animations["Crouch"].LoopAnimation = true;
+            animations["crouch"].LoopAnimation = true;
 
             animations.Add("jumpBig",
                 new AnimationStrip(
@@ -105,11 +106,11 @@ namespace ItalianGuys
                     1));
             float k = animations["jumpBig"].FrameLength;
 
-            animations["jumpBig"].LoopAnimation = false;
+            animations["jumpBig"].LoopAnimation = true;
             animations["jumpBig"].FrameLength = 0.5f;
             animations["jumpBig"].NextAnimation = "idleBig";
 
-            currentAnimation = "idle";
+            currentAnimation = "idle" + (isBig ? "Big" : "");
         }
 
         public override void Update(GameTime gameTime)
@@ -125,12 +126,28 @@ namespace ItalianGuys
 
 
             // Check collision below
-            xTile.Tiles.Tile tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height),
-                                                      new Vector2(this.Location.X+this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height - 1)
+            xTile.Tiles.Tile tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height + 1),
+                                                      new Vector2(this.Location.X+this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height + 1)
                                                       );
 
-            if (tile != null)
+            if (tile != null && !tile.Properties.ContainsKey("Passable"))
             {
+                if (tile.Properties.Keys.Contains("causeDeath"))
+                {
+                    if (tile.Properties["causeDeath"])
+                    {
+                        if (!Dead)
+                        {
+                            currentAnimation = "die";
+                            isBig = false;
+                            onGround = false;
+                            this.velocity = new Vector2(0, -1000);
+                            this.Dead = true;
+                        }
+
+                    }
+                }
+
                 onGround = true;
                 this.velocity.Y = 0;
                 this.location.Y -= (this.location.Y+animations[currentAnimation].FrameHeight) % 48;
@@ -138,77 +155,90 @@ namespace ItalianGuys
             else
                 onGround = false;
 
-            currentAnimation = "idle";
-            if (!onGround)
+            if (!Dead)
             {
-                currentAnimation = "jump";
-            }
-            
-
-            // Check collision above
-            tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X+this.BoundingBoxRect.Width, this.Location.Y));
-
-            if (tile != null)
-            {
-                
-                if (this.velocity.Y != 0)
+                currentAnimation = "idle" + (isBig ? "Big" : "");
+                if (!onGround)
                 {
-                    this.velocity.Y = 0.1f;
-                    this.location.Y = (int)(this.Center.Y / 48) * 48;
+                    currentAnimation = "jump" + (isBig ? "Big" : "");
                 }
-            }
 
 
-            if (kb.IsKeyDown(Keys.Space) && onGround)
-            {
-                this.velocity = new Vector2(0, -700);
-                currentAnimation = "jump";
-                onGround = false;
-            }
+                // Check collision above
+                tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y));
 
-            if (kb.IsKeyDown(Keys.Left) && World.viewport.X >= 0)
-            {
-                if (onGround) currentAnimation = "run";
-                this.FlipHorizontal = true;
-
-                if (this.location.X > WalkableArea.Left)
-                    this.location.X -= 5;
-                else
-                    World.viewport.X -= 5;
-
-                tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height - 1));
-
-                if (tile != null)
+                if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
+
+                    if (this.velocity.Y != 0)
+                    {
+                        this.velocity.Y = 0.1f;
+                        this.location.Y = (int)(this.Center.Y / 48) * 48;
+                    }
+                }
+
+
+                if (kb.IsKeyDown(Keys.Space) && onGround)
+                {
+                    this.velocity = new Vector2(0, -700);
+                    currentAnimation = "jump" + (isBig ? "Big" : "");
+                    onGround = false;
+                }
+
+                if (kb.IsKeyDown(Keys.Down) && onGround && isBig)
+                {
+                    currentAnimation = "crouch";
+                }
+
+                if (kb.IsKeyDown(Keys.Left))
+                {
+                    if (onGround) currentAnimation = "run" + (isBig ? "Big" : "");
+                    this.FlipHorizontal = true;
+
                     if (this.location.X > WalkableArea.Left)
+                        this.location.X -= 5;
+                    else if (World.viewport.X > 0)
+                        World.viewport.X -= 5;
+
+                }
+
+                if (kb.IsKeyDown(Keys.Right))
+                {
+                    if (onGround) currentAnimation = "run" + (isBig ? "Big" : "");
+                    this.FlipHorizontal = false;
+
+                    if (this.location.X < WalkableArea.Right)
                         this.location.X += 5;
                     else
                         World.viewport.X += 5;
+
                 }
-            }
 
-            if (kb.IsKeyDown(Keys.Right))
-            {
-                if (onGround) currentAnimation = "run";
-                this.FlipHorizontal = false;
-
-                if (this.location.X < WalkableArea.Right)
-                    this.location.X += 5;
-                else
-                    World.viewport.X += 5;
-
+                // Right collision test
                 tile = CollisionEdgeTest(new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y), new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height - 1));
 
-                if (tile != null)
+                if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
                     if (this.location.X < WalkableArea.Right)
                         this.location.X -= 5;
                     else
                         World.viewport.X -= 5;
                 }
+
+                // Left collision test
+                tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height - 1));
+
+                if (tile != null && !tile.Properties.ContainsKey("Passable"))
+                {
+                    if (this.location.X > WalkableArea.Left)
+                        this.location.X += 5;
+                    else
+                        World.viewport.X += 5;
+
+                    //this.location.X = (int)(this.Center.X / 48) * 48;
+
+                }
             }
-
-
 
             base.Update(gameTime);
         }

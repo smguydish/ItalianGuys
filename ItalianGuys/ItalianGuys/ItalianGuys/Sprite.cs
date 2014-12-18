@@ -12,6 +12,8 @@ namespace ItalianGuys
         protected Dictionary<string, AnimationStrip> animations = new Dictionary<string, AnimationStrip>();
         protected string currentAnimation;
 
+        public bool Dead = false;
+
         private xTile.Map map;
 
         private Color tintColor = Color.White;
@@ -124,6 +126,7 @@ namespace ItalianGuys
                 xTile.Tiles.Tile tile = map.GetLayer("Foreground").Tiles[(int)point.X, (int)point.Y];
                 if (tile != null)
                 {
+                    
                 }
                 return tile;
             }
@@ -136,6 +139,10 @@ namespace ItalianGuys
         {
             xTile.Tiles.Tile tile1 = CollisionTest(point1);
             xTile.Tiles.Tile tile2 = CollisionTest(point2);
+            xTile.Tiles.Tile tile3 = CollisionTest((point1+point2)/2);
+
+            if (tile3 != null)
+                return tile3;
 
             if (tile1 != null && tile2 != null)
             {

@@ -183,35 +183,119 @@
     </Layer>
     <Layer Id="Foreground" Visible="True">
       <Description><![CDATA[]]></Description>
-      <Dimensions LayerSize="100 x 13" TileSize="48 x 48" />
+      <Dimensions LayerSize="150 x 14" TileSize="48 x 48" />
       <TileArray>
         <Row>
-          <Null Count="100" />
+          <Null Count="150" />
         </Row>
         <Row>
-          <Null Count="100" />
+          <Null Count="150" />
         </Row>
         <Row>
-          <Null Count="100" />
+          <Null Count="150" />
         </Row>
         <Row>
-          <Null Count="100" />
+          <Null Count="150" />
         </Row>
         <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="7" />
+          <Null Count="13" />
           <TileSheet Ref="untitled tile sheet" />
+          <Animated Interval="150">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Null Count="79" />
+          <Animated Interval="150">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Null Count="56" />
+        </Row>
+        <Row>
+          <Null Count="64" />
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Null Count="3" />
           <Animated Interval="125">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
@@ -248,6 +332,26 @@
               <Static Index="3" BlendMode="Alpha" />
             </Frames>
           </Animated>
+          <Null Count="71" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="6" />
+          <Animated Interval="150">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Null Count="4" />
           <Animated Interval="125">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
@@ -255,34 +359,194 @@
               <Static Index="30" BlendMode="Alpha" />
               <Static Index="31" BlendMode="Alpha" />
               <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="150">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="150">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Null Count="13" />
+          <Static Index="149" BlendMode="Alpha" />
+          <Static Index="150" BlendMode="Alpha" />
+          <Null Count="10" />
+          <Static Index="149" BlendMode="Alpha">
+            <Properties>
+              <Property Key="Warp" Type="String"><![CDATA[Level1-a]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="150" BlendMode="Alpha">
+            <Properties>
+              <Property Key="Warp" Type="String"><![CDATA[Level1-a]]></Property>
+            </Properties>
+          </Static>
+          <Null Count="18" />
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="150">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Null Count="19" />
+          <Animated Interval="125">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="29" BlendMode="Alpha" />
+              <Static Index="30" BlendMode="Alpha" />
+              <Static Index="31" BlendMode="Alpha" />
+              <Static Index="32" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Animated Interval="150">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Null Count="5" />
+          <Animated Interval="150">
+            <Frames>
+              <TileSheet Ref="untitled tile sheet" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
             </Frames>
           </Animated>
           <Null Count="2" />
-          <Animated Interval="125">
+          <Animated Interval="150">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
-              <Static Index="29" BlendMode="Alpha" />
-              <Static Index="30" BlendMode="Alpha" />
-              <Static Index="31" BlendMode="Alpha" />
-              <Static Index="32" BlendMode="Alpha" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Animated Interval="125">
+          <Null Count="2" />
+          <Animated Interval="150">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
-              <Static Index="29" BlendMode="Alpha" />
-              <Static Index="30" BlendMode="Alpha" />
-              <Static Index="31" BlendMode="Alpha" />
-              <Static Index="32" BlendMode="Alpha" />
+              <Static Index="0" BlendMode="Alpha" />
+              <Static Index="1" BlendMode="Alpha" />
+              <Static Index="2" BlendMode="Alpha" />
+              <Static Index="3" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Null Count="84" />
+          <Null Count="53" />
         </Row>
         <Row>
-          <Null Count="100" />
+          <Null Count="20" />
+          <Static Index="149" BlendMode="Alpha" />
+          <Static Index="150" BlendMode="Alpha" />
+          <Null Count="7" />
+          <Static Index="178" BlendMode="Alpha" />
+          <Static Index="179" BlendMode="Alpha" />
+          <Null Count="10" />
+          <Static Index="178" BlendMode="Alpha" />
+          <Static Index="179" BlendMode="Alpha" />
+          <Null Count="107" />
         </Row>
         <Row>
-          <Null Count="100" />
+          <Null Count="20" />
+          <Static Index="178" BlendMode="Alpha" />
+          <Static Index="179" BlendMode="Alpha" />
+          <Static Index="374" BlendMode="Alpha">
+            <Properties>
+              <Property Key="Passable" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="374" BlendMode="Alpha">
+            <Properties>
+              <Property Key="Passable" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="374" BlendMode="Alpha">
+            <Properties>
+              <Property Key="Passable" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="374" BlendMode="Alpha">
+            <Properties>
+              <Property Key="Passable" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="374" BlendMode="Alpha">
+            <Properties>
+              <Property Key="Passable" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="374" BlendMode="Alpha">
+            <Properties>
+              <Property Key="Passable" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="374" BlendMode="Alpha">
+            <Properties>
+              <Property Key="Passable" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="178" BlendMode="Alpha" />
+          <Static Index="179" BlendMode="Alpha" />
+          <Null Count="10" />
+          <Static Index="178" BlendMode="Alpha" />
+          <Static Index="179" BlendMode="Alpha" />
+          <Null Count="107" />
         </Row>
         <Row>
           <Static Index="75" BlendMode="Alpha" />
@@ -338,6 +602,23 @@
           <Static Index="75" BlendMode="Alpha" />
           <Static Index="75" BlendMode="Alpha" />
           <Static Index="75" BlendMode="Alpha" />
+          <Null Count="2" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Null Count="3" />
           <Static Index="75" BlendMode="Alpha" />
           <Static Index="75" BlendMode="Alpha" />
           <Static Index="75" BlendMode="Alpha" />
@@ -385,6 +666,34 @@
           <Static Index="75" BlendMode="Alpha" />
           <Static Index="75" BlendMode="Alpha" />
           <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Static Index="75" BlendMode="Alpha" />
+          <Null Count="3" />
         </Row>
         <Row>
           <Static Index="77" BlendMode="Alpha" />
@@ -440,6 +749,23 @@
           <Static Index="77" BlendMode="Alpha" />
           <Static Index="77" BlendMode="Alpha" />
           <Static Index="77" BlendMode="Alpha" />
+          <Null Count="2" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Null Count="3" />
           <Static Index="77" BlendMode="Alpha" />
           <Static Index="77" BlendMode="Alpha" />
           <Static Index="77" BlendMode="Alpha" />
@@ -487,6 +813,786 @@
           <Static Index="77" BlendMode="Alpha" />
           <Static Index="77" BlendMode="Alpha" />
           <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Static Index="77" BlendMode="Alpha" />
+          <Null Count="3" />
+        </Row>
+        <Row>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="592" BlendMode="Alpha">
+            <Properties>
+              <Property Key="causeDeath" Type="Boolean"><![CDATA[True]]></Property>
+            </Properties>
+          </Static>
         </Row>
       </TileArray>
       <Properties />

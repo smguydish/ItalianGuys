@@ -95,7 +95,7 @@ namespace ItalianGuys
 
             map.Update(gameTime.ElapsedGameTime.Milliseconds);
             test.Update(gameTime);
-            //World.viewport.X++;
+            //World.viewport.Y++;
 
             base.Update(gameTime);
         }
