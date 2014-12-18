@@ -195,10 +195,15 @@ namespace ItalianGuys
                     if (onGround) currentAnimation = "run" + (isBig ? "Big" : "");
                     this.FlipHorizontal = true;
 
-                    if (this.location.X > WalkableArea.Left)
+                    if (this.location.X > (World.viewport.X + WalkableArea.Left))
+                    {
                         this.location.X -= 5;
+                    }
                     else if (World.viewport.X > 0)
+                    {
                         World.viewport.X -= 5;
+                        this.location.X -= 5;
+                    }
 
                 }
 
@@ -207,10 +212,13 @@ namespace ItalianGuys
                     if (onGround) currentAnimation = "run" + (isBig ? "Big" : "");
                     this.FlipHorizontal = false;
 
-                    if (this.location.X < WalkableArea.Right)
-                        this.location.X += 5;
-                    else
+                    this.location.X += 5;
+
+                    if (this.location.X > (World.viewport.X + WalkableArea.Right))
+                    {
+
                         World.viewport.X += 5;
+                    }
 
                 }
 
@@ -219,10 +227,12 @@ namespace ItalianGuys
 
                 if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
-                    if (this.location.X < WalkableArea.Right)
-                        this.location.X -= 5;
-                    else
+                    this.location.X -= 5;
+
+                    if (this.location.X >= (World.viewport.X + WalkableArea.Right))
+                    {
                         World.viewport.X -= 5;
+                    }
                 }
 
                 // Left collision test
@@ -230,10 +240,12 @@ namespace ItalianGuys
 
                 if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
-                    if (this.location.X > WalkableArea.Left)
-                        this.location.X += 5;
-                    else
+                    this.location.X += 5;
+
+                    if (this.location.X <= (World.viewport.X + WalkableArea.Left))
+                    {
                         World.viewport.X += 5;
+                    }
 
                     //this.location.X = (int)(this.Center.X / 48) * 48;
 

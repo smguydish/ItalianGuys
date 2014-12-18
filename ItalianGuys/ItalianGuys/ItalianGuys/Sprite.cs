@@ -118,7 +118,7 @@ namespace ItalianGuys
 
         public virtual xTile.Tiles.Tile CollisionTest(Vector2 point)
         {
-            point.X = (int)((point.X + World.viewport.X) / 48f);
+            point.X = (int)((point.X) / 48f);
             point.Y = (int)(point.Y / 48);
 
             if (point.X < map.DisplaySize.Width / 48 && point.Y < map.DisplaySize.Height / 48 && point.X >= 0 && point.Y >= 0)
@@ -213,7 +213,6 @@ namespace ItalianGuys
         {
             if (animations.ContainsKey(currentAnimation))
             {
-
                 SpriteEffects effect = SpriteEffects.None;
 
                 if (FlipHorizontal)
@@ -221,15 +220,18 @@ namespace ItalianGuys
                     effect = SpriteEffects.FlipHorizontally;
                 }
 
-                spriteBatch.Draw(
-                    animations[currentAnimation].Texture,
-                    Center,
-                    Source,
-                    tintColor,
-                    rotation,
-                    Origin,
-                    1.0f,
-                    effect, 0);
+                Vector2 loc = new Vector2(Center.X - World.viewport.X, Center.Y);
+
+                if (loc.X >= -animations[currentAnimation].FrameWidth && loc.X <= World.viewport.Width)
+                    spriteBatch.Draw(
+                        animations[currentAnimation].Texture,
+                        loc,
+                        Source,
+                        tintColor,
+                        rotation,
+                        Origin,
+                        1.0f,
+                        effect, 0);
             }
 
         }
