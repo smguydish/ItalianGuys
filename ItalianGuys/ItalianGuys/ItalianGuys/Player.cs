@@ -44,6 +44,7 @@ namespace ItalianGuys
                                   0,
                                   2));
             animations["run"].LoopAnimation = true;
+            animations["run"].FrameLength = 0.08f;
 
             animations.Add("jump",
                 new AnimationStrip(
@@ -54,7 +55,7 @@ namespace ItalianGuys
                     1));
             float i = animations["jump"].FrameLength;
 
-            animations["jump"].LoopAnimation = false;
+            animations["jump"].LoopAnimation = true;
             animations["jump"].FrameLength = 0.7f;
             animations["jump"].NextAnimation = "idle";
 
@@ -131,12 +132,18 @@ namespace ItalianGuys
             if (tile != null)
             {
                 onGround = true;
-                currentAnimation = "idle";
                 this.velocity.Y = 0;
                 this.location.Y -= (this.location.Y+animations[currentAnimation].FrameHeight) % 48;
             }
             else
                 onGround = false;
+
+            currentAnimation = "idle";
+            if (!onGround)
+            {
+                currentAnimation = "jump";
+            }
+            
 
             // Check collision above
             tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X+this.BoundingBoxRect.Width, this.Location.Y));
@@ -161,6 +168,9 @@ namespace ItalianGuys
 
             if (kb.IsKeyDown(Keys.Left) && World.viewport.X >= 0)
             {
+                if (onGround) currentAnimation = "run";
+                this.FlipHorizontal = true;
+
                 if (this.location.X > WalkableArea.Left)
                     this.location.X -= 5;
                 else
@@ -179,6 +189,9 @@ namespace ItalianGuys
 
             if (kb.IsKeyDown(Keys.Right))
             {
+                if (onGround) currentAnimation = "run";
+                this.FlipHorizontal = false;
+
                 if (this.location.X < WalkableArea.Right)
                     this.location.X += 5;
                 else
