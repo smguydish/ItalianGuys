@@ -14,6 +14,12 @@ namespace ItalianGuys
         public float gravityTimer = 0f;
         public float gravityTimerMax = 10f;
         public float gravity = 25f;
+
+        public float invulnerabilityTimer = 0f;
+        public float invulnerabilityTimerMax = 10f;
+
+        public bool Invulnerable { get { return invulnerabilityTimer > 0; } set { invulnerabilityTimer = invulnerabilityTimerMax; } }
+
         public Rectangle WalkableArea = new Rectangle(250, 0, 250, 400);
 
         public bool onGround = false;
@@ -113,6 +119,27 @@ namespace ItalianGuys
             currentAnimation = "idle" + (isBig ? "Big" : "");
         }
 
+        public void MakeInvulnerable(float time)
+        {
+            invulnerabilityTimer = time;
+        }
+
+        public void Jump()
+        {
+            this.velocity = new Vector2(0, -650);
+            currentAnimation = "jump" + (isBig ? "Big" : "");
+            onGround = false;
+        }
+
+        public void Die()
+        {
+            currentAnimation = "die";
+            isBig = false;
+            onGround = false;
+            this.velocity = new Vector2(0, -800);
+            this.Dead = true;
+        }
+
         public override void Update(GameTime gameTime)
         {
             KeyboardState kb = Keyboard.GetState();
@@ -124,6 +151,11 @@ namespace ItalianGuys
                 gravityTimer = 0f;
             }
 
+            invulnerabilityTimer -= (float)gameTime.ElapsedGameTime.Milliseconds;
+            if (invulnerabilityTimer <= 0)
+            {
+                invulnerabilityTimer = 0;
+            }
 
             // Check collision below
             xTile.Tiles.Tile tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height + 1),
@@ -138,22 +170,23 @@ namespace ItalianGuys
                     {
                         if (!Dead)
                         {
-                            currentAnimation = "die";
-                            isBig = false;
-                            onGround = false;
-                            this.velocity = new Vector2(0, -1000);
-                            this.Dead = true;
+                            Die();
                         }
 
                     }
                 }
 
                 onGround = true;
-                this.velocity.Y = 0;
-                this.location.Y -= (this.location.Y+animations[currentAnimation].FrameHeight) % 48;
+
+                if (!Dead)
+                {
+                    this.velocity.Y = 0;
+                    this.location.Y -= (this.location.Y + animations[currentAnimation].FrameHeight + 1) % 48;
+                }
             }
             else
                 onGround = false;
+
 
             if (!Dead)
             {
@@ -172,7 +205,7 @@ namespace ItalianGuys
 
                     if (this.velocity.Y != 0)
                     {
-                        this.velocity.Y = 0.1f;
+                        this.velocity.Y = 0.01f;
                         this.location.Y = (int)(this.Center.Y / 48) * 48;
                     }
                 }
@@ -180,9 +213,7 @@ namespace ItalianGuys
 
                 if (kb.IsKeyDown(Keys.Space) && onGround)
                 {
-                    this.velocity = new Vector2(0, -650);
-                    currentAnimation = "jump" + (isBig ? "Big" : "");
-                    onGround = false;
+                    Jump();
                 }
 
                 if (kb.IsKeyDown(Keys.Down) && onGround && isBig)

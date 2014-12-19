@@ -26,8 +26,10 @@ namespace ItalianGuys
         //xTile.Dimensions.Rectangle viewport;
 
         Texture2D mario;
-        Player test;
+        Player player;
         Enemy enemy;
+
+        List<Enemy> enemies = new List<Enemy>();
 
         public Game1()
         {
@@ -71,9 +73,45 @@ namespace ItalianGuys
             World.viewport = new xTile.Dimensions.Rectangle(new xTile.Dimensions.Size(800, 600));
 
             mario = Content.Load<Texture2D>("tiles");
-            test = new Player(this.Content, new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), Vector2.Zero, map);
+            player = new Player(this.Content, new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), Vector2.Zero, map);
 
-            enemy = new Enemy(this.Content, new Vector2(1500, this.Window.ClientBounds.Height - (48 * 2) - 48), new Vector2(-90,0), map);
+            xTile.Layers.Layer elayer = map.GetLayer("Enemy");
+            elayer.Visible = false;
+            for (int x = 0; x < elayer.LayerWidth; x++)
+            {
+                for (int y = 0; y < elayer.LayerHeight; y++)
+                {
+                    xTile.Tiles.Tile tile = elayer.Tiles[x,y];
+
+                    if (tile != null)
+                    {
+                        if (tile.Properties.Keys.Contains("type"))
+                        {
+                            Vector2 vel = Vector2.Zero;
+
+                            if (tile.Properties.Keys.Contains("velocity")) 
+                                vel = new Vector2(90 * tile.Properties["velocity"], 0);
+
+                            int x_left = -1, x_right = -1;
+
+                            if (tile.Properties.Keys.Contains("x_left"))
+                                x_left = tile.Properties["x_left"];
+
+                            if (tile.Properties.Keys.Contains("x_right"))
+                                x_right = tile.Properties["x_right"];
+
+                            if (tile.Properties.Keys.Contains("type") && tile.Properties["type"] == "goomba")
+                            {
+                                enemies.Add(new Enemy(this.Content, new Vector2(x*48, y*48), vel, x_left, x_right, map));
+                            }
+
+                            
+
+                            
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -97,8 +135,33 @@ namespace ItalianGuys
                 this.Exit();
 
             map.Update(gameTime.ElapsedGameTime.Milliseconds);
-            test.Update(gameTime);
-            enemy.Update(gameTime);
+            player.Update(gameTime);
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (Vector2.Distance(player.Center, enemies[i].Center) < World.viewport.Width)
+                {
+                    enemies[i].Update(gameTime);
+                    if (enemies[i].IsBoxColliding(player.BoundingBoxRect) && !enemies[i].Dead)
+                    {
+                        if (player.onGround && !player.Invulnerable)
+                        {
+                            if (player.isBig)
+                            {
+                                player.isBig = false;
+                                player.MakeInvulnerable(1000);
+                            }
+                            else
+                                player.Die();
+                        }
+                        else if (!player.Invulnerable && !player.Dead)
+                        {
+                            enemies[i].Die();
+                            player.Jump();
+                        }
+                    }
+                }
+            }
             //World.viewport.Y++;
 
             base.Update(gameTime);
@@ -115,8 +178,13 @@ namespace ItalianGuys
             map.Draw(mapDisplayDevice, World.viewport);
 
             spriteBatch.Begin();
-            test.Draw(spriteBatch);
-            enemy.Draw(spriteBatch);
+            player.Draw(spriteBatch);
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                enemies[i].Draw(spriteBatch);
+            }
+            
             spriteBatch.End();
 
             base.Draw(gameTime);

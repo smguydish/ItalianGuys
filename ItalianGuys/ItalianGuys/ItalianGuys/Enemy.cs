@@ -11,20 +11,26 @@ namespace ItalianGuys
 {
     class Enemy : Sprite
     {
-        public float gravityTimer = 0f;
-        public float gravityTimerMax = 10f;
-        public float gravity = 25f;
+        public string Name;
+        private float gravityTimer = 0f;
+        private float gravityTimerMax = 10f;
+        private float gravity = 25f;
         public bool onGround = false;
 
+        private int x_left;
+        private int x_right;
 
         public Enemy(
            ContentManager content,
            Vector2 location,
            Vector2 velocity,
+           int x_left, // Left x extend
+           int x_right,
            xTile.Map map)
             : base(location, velocity, map)
         {
-            // mario, new Rectangle(0, 0, 48, 48)
+            this.x_left = x_left;
+            this.x_right = x_right;
 
             animations.Add("run",
                               new AnimationStrip(
@@ -38,15 +44,31 @@ namespace ItalianGuys
 
             animations.Add("die",
                 new AnimationStrip(
-                    content.Load<Texture2D>(@"Sprites\Player\Mario"),
+                    content.Load<Texture2D>(@"Sprites\Badguys\goomba"),
                     32,
                     "die",
-                    64,
+                    65,
                     1));
             animations["die"].LoopAnimation = false;
+            animations["die"].FrameLength = 1f;
+            animations["die"].NextAnimation = "dead";
 
+            animations.Add("dead",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Sprites\Badguys\goomba"),
+                    0,
+                    "dead",
+                    0,
+                    1));
 
             currentAnimation = "run";
+        }
+
+        public void Die()
+        {
+            Dead = true;
+            currentAnimation = "die";
+            this.velocity = Vector2.Zero;
         }
 
         public override void Update(GameTime gameTime)
@@ -115,7 +137,13 @@ namespace ItalianGuys
                     this.location.Y -= (this.location.Y + animations[currentAnimation].FrameHeight) % 48;
                 }
 
-               
+                int x_loc = (int)(this.location.X / 48);
+                if ((x_loc < x_left && x_left != -1) || (x_loc >= x_right && x_right != -1))
+                {
+                    this.velocity.X *= -1;
+                    this.location.Y -= (this.location.Y + animations[currentAnimation].FrameHeight) % 48;
+
+                }
 
             }
 

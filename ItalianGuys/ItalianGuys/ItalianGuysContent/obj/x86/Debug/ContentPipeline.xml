@@ -7,49 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\tiles.xnb</Output>
-      <Time>2014-12-16T20:42:44.994635-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Player\Mario.png</Source>
-      <Name>Sprites\Player\Mario</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\Mario.xnb</Output>
-      <Time>2014-12-18T22:52:49.1735179-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Player\marioBig.png</Source>
-      <Name>Sprites\Player\marioBig</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioBig.xnb</Output>
-      <Time>2014-12-18T23:00:37.2632911-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Player\marioFire.png</Source>
-      <Name>Sprites\Player\marioFire</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioFire.xnb</Output>
-      <Time>2014-12-18T20:56:03.8949448-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Levels\Level1.tide</Source>
-      <Name>Levels\Level1</Name>
-      <Importer>TideImporter</Importer>
-      <Processor>TideProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Levels\Level1.xnb</Output>
-      <Time>2014-12-18T20:56:03.7509366-05:00</Time>
-      <Dependency>
-        <Key>tiles.png</Key>
-        <Value>2014-12-16T20:42:44.994635-05:00</Value>
-      </Dependency>
-      <Request>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\tiles.xnb</Request>
+      <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\tiles.xnb</Output>
+      <Time>2014-12-19T07:23:32.095-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Badguys\goomba.png</Source>
@@ -57,8 +16,63 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Badguys\goomba.xnb</Output>
-      <Time>2014-12-18T20:58:55.3296444-05:00</Time>
+      <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Badguys\goomba.xnb</Output>
+      <Time>2014-12-19T07:23:31.415-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Player\Mario.png</Source>
+      <Name>Sprites\Player\Mario</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\Mario.xnb</Output>
+      <Time>2014-12-19T07:23:31.913-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Player\marioBig.png</Source>
+      <Name>Sprites\Player\marioBig</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioBig.xnb</Output>
+      <Time>2014-12-19T07:23:31.915-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Player\marioFire.png</Source>
+      <Name>Sprites\Player\marioFire</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioFire.xnb</Output>
+      <Time>2014-12-19T07:23:31.964-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Level1.tide</Source>
+      <Name>Levels\Level1</Name>
+      <Importer>TideImporter</Importer>
+      <Processor>TideProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Levels\Level1.xnb</Output>
+      <Time>2014-12-19T08:20:21.01-05:00</Time>
+      <Dependency>
+        <Key>badguypalette.png</Key>
+        <Value>2014-12-19T07:35:34.499-05:00</Value>
+      </Dependency>
+      <Dependency>
+        <Key>tiles.png</Key>
+        <Value>2014-12-19T07:23:32.095-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\badguypalette.xnb</Request>
+      <Request>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\tiles.xnb</Request>
+    </Item>
+    <Item>
+      <Source>badguypalette.png</Source>
+      <Name>badguypalette</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\badguypalette.xnb</Output>
+      <Time>2014-12-19T07:35:34.499-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -66,43 +80,43 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuysContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuysContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuysContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuysContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\xTile.Pipeline.dll</Key>
-        <Value>2013-08-12T10:22:08-04:00</Value>
+        <Key>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\xTile.Pipeline.dll</Key>
+        <Value>2014-12-19T07:23:32.128-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T13:41:18-04:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-02-15T10:58:29.0521406-05:00</Value>
+        <Value>2012-04-18T11:24:14.1308-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

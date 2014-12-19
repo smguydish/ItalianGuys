@@ -2,6 +2,12 @@
 <Map Id="Untitled">
   <Description><![CDATA[]]></Description>
   <TileSheets>
+    <TileSheet Id="bad guy palette">
+      <Description><![CDATA[]]></Description>
+      <ImageSource><![CDATA[..\badguypalette.png]]></ImageSource>
+      <Alignment SheetSize="8 x 1" TileSize="48 x 48" Margin="0 x 0" Spacing="0 x 0" />
+      <Properties />
+    </TileSheet>
     <TileSheet Id="untitled tile sheet">
       <Description><![CDATA[]]></Description>
       <ImageSource><![CDATA[..\tiles.png]]></ImageSource>
@@ -1705,6 +1711,105 @@
         </Row>
         <Row>
           <Null Count="40" />
+        </Row>
+      </TileArray>
+      <Properties />
+    </Layer>
+    <Layer Id="Enemy" Visible="True">
+      <Description><![CDATA[]]></Description>
+      <Dimensions LayerSize="150 x 14" TileSize="48 x 48" />
+      <TileArray>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="68" />
+          <TileSheet Ref="bad guy palette" />
+          <Static Index="0" BlendMode="Alpha">
+            <Properties>
+              <Property Key="x_left" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="x_right" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="jumping" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="type" Type="String"><![CDATA[goomba]]></Property>
+              <Property Key="velocity" Type="Int32"><![CDATA[-1]]></Property>
+            </Properties>
+          </Static>
+          <Null Count="81" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="18" />
+          <Static Index="0" BlendMode="Alpha">
+            <Properties>
+              <Property Key="x_left" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="x_right" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="jumping" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="type" Type="String"><![CDATA[goomba]]></Property>
+              <Property Key="velocity" Type="Int32"><![CDATA[-1]]></Property>
+            </Properties>
+          </Static>
+          <Null Count="18" />
+          <Static Index="0" BlendMode="Alpha">
+            <Properties>
+              <Property Key="x_left" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="x_right" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="jumping" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="type" Type="String"><![CDATA[goomba]]></Property>
+              <Property Key="velocity" Type="Int32"><![CDATA[1]]></Property>
+            </Properties>
+          </Static>
+          <Null Count="27" />
+          <Static Index="0" BlendMode="Alpha">
+            <Properties>
+              <Property Key="x_left" Type="Int32"><![CDATA[55]]></Property>
+              <Property Key="x_right" Type="Int32"><![CDATA[69]]></Property>
+              <Property Key="jumping" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="type" Type="String"><![CDATA[goomba]]></Property>
+              <Property Key="velocity" Type="Int32"><![CDATA[-1]]></Property>
+            </Properties>
+          </Static>
+          <Static Index="0" BlendMode="Alpha">
+            <Properties>
+              <Property Key="x_left" Type="Int32"><![CDATA[55]]></Property>
+              <Property Key="x_right" Type="Int32"><![CDATA[69]]></Property>
+              <Property Key="jumping" Type="Int32"><![CDATA[-1]]></Property>
+              <Property Key="type" Type="String"><![CDATA[goomba]]></Property>
+              <Property Key="velocity" Type="Int32"><![CDATA[-1]]></Property>
+            </Properties>
+          </Static>
+          <Null Count="83" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
+        </Row>
+        <Row>
+          <Null Count="150" />
         </Row>
       </TileArray>
       <Properties />

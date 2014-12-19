@@ -1,6 +1,7 @@
 Content\tiles.xnb
+Content\Sprites\Badguys\goomba.xnb
 Content\Sprites\Player\Mario.xnb
 Content\Sprites\Player\marioBig.xnb
 Content\Sprites\Player\marioFire.xnb
 Content\Levels\Level1.xnb
-Content\Sprites\Badguys\goomba.xnb
+Content\badguypalette.xnb
