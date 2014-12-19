@@ -89,8 +89,6 @@ namespace ItalianGuys
             else
                 onGround = false;
 
-            Vector2 temploc = this.location;
-
             base.Update(gameTime);
 
             if (!Dead)
@@ -103,6 +101,7 @@ namespace ItalianGuys
                 if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
                     //location = temploc;
+                    this.velocity.X *= -1;
                     this.location.Y -= (this.location.Y + animations[currentAnimation].FrameHeight) % 48;
                 }
 
@@ -112,8 +111,12 @@ namespace ItalianGuys
                 if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
                     //location = temploc;
+                    this.velocity.X *= -1;
                     this.location.Y -= (this.location.Y + animations[currentAnimation].FrameHeight) % 48;
                 }
+
+               
+
             }
 
             

@@ -180,7 +180,7 @@ namespace ItalianGuys
 
                 if (kb.IsKeyDown(Keys.Space) && onGround)
                 {
-                    this.velocity = new Vector2(0, -700);
+                    this.velocity = new Vector2(0, -650);
                     currentAnimation = "jump" + (isBig ? "Big" : "");
                     onGround = false;
                 }

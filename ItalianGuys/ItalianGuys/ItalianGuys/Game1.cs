@@ -73,7 +73,7 @@ namespace ItalianGuys
             mario = Content.Load<Texture2D>("tiles");
             test = new Player(this.Content, new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), Vector2.Zero, map);
 
-            enemy = new Enemy(this.Content, new Vector2(900, this.Window.ClientBounds.Height - (48 * 2) - 48), new Vector2(-90,0), map);
+            enemy = new Enemy(this.Content, new Vector2(1500, this.Window.ClientBounds.Height - (48 * 2) - 48), new Vector2(-90,0), map);
         }
 
         /// <summary>
