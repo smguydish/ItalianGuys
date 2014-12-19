@@ -58,7 +58,13 @@
       <Processor>TideProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Sprites\Badguys\goomba.png">
+      <Name>goomba</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Sprites\Player\Mario.png">
       <Name>Mario</Name>

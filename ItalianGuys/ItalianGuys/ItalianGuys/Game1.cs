@@ -27,6 +27,7 @@ namespace ItalianGuys
 
         Texture2D mario;
         Player test;
+        Enemy enemy;
 
         public Game1()
         {
@@ -71,6 +72,8 @@ namespace ItalianGuys
 
             mario = Content.Load<Texture2D>("tiles");
             test = new Player(this.Content, new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), Vector2.Zero, map);
+
+            enemy = new Enemy(this.Content, new Vector2(900, this.Window.ClientBounds.Height - (48 * 2) - 48), new Vector2(-90,0), map);
         }
 
         /// <summary>
@@ -95,6 +98,7 @@ namespace ItalianGuys
 
             map.Update(gameTime.ElapsedGameTime.Milliseconds);
             test.Update(gameTime);
+            enemy.Update(gameTime);
             //World.viewport.Y++;
 
             base.Update(gameTime);
@@ -112,6 +116,7 @@ namespace ItalianGuys
 
             spriteBatch.Begin();
             test.Draw(spriteBatch);
+            enemy.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);

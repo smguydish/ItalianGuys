@@ -19,3 +19,7 @@ C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys
 C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\Mario.xnb
 C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioBig.xnb
 C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioFire.xnb
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\Mario.xnb
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioBig.xnb
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioFire.xnb
+C:\Users\tanczosm\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Badguys\goomba.xnb

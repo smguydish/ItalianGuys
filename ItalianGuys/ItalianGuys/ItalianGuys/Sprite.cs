@@ -121,7 +121,10 @@ namespace ItalianGuys
             point.X = (int)((point.X) / 48f);
             point.Y = (int)(point.Y / 48);
 
-            if (point.X < map.DisplaySize.Width / 48 && point.Y < map.DisplaySize.Height / 48 && point.X >= 0 && point.Y >= 0)
+            int map_width = map.GetLayer("Foreground").LayerWidth;
+            int map_height = map.GetLayer("Foreground").LayerHeight;
+
+            if (point.X < map_width && point.Y < map_height && point.X >= 0 && point.Y >= 0)
             {
                 xTile.Tiles.Tile tile = map.GetLayer("Foreground").Tiles[(int)point.X, (int)point.Y];
                 if (tile != null)
