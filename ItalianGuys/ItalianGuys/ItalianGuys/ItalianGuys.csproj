@@ -112,6 +112,7 @@
   <ItemGroup>
     <Compile Include="AnimationStrip.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="ParticleManager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
