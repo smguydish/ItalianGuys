@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\tiles.xnb</Output>
-      <Time>2014-12-19T07:23:32.095-05:00</Time>
+      <Time>2014-12-22T10:58:46.3712-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Badguys\goomba.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Badguys\goomba.xnb</Output>
-      <Time>2014-12-19T07:23:31.415-05:00</Time>
+      <Time>2014-12-22T07:35:15.2522-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Player\Mario.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\Mario.xnb</Output>
-      <Time>2014-12-19T07:23:31.913-05:00</Time>
+      <Time>2014-12-22T07:35:15.3122-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Player\marioBig.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioBig.xnb</Output>
-      <Time>2014-12-19T07:23:31.915-05:00</Time>
+      <Time>2014-12-22T07:35:15.3242-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Player\marioFire.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Sprites\Player\marioFire.xnb</Output>
-      <Time>2014-12-19T07:23:31.964-05:00</Time>
+      <Time>2014-12-22T07:35:15.3322-05:00</Time>
     </Item>
     <Item>
       <Source>Levels\Level1.tide</Source>
@@ -53,14 +53,14 @@
       <Processor>TideProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\Levels\Level1.xnb</Output>
-      <Time>2014-12-19T08:20:21.01-05:00</Time>
+      <Time>2014-12-22T07:35:15.2442-05:00</Time>
       <Dependency>
         <Key>badguypalette.png</Key>
-        <Value>2014-12-19T07:35:34.499-05:00</Value>
+        <Value>2014-12-22T07:35:15.3352-05:00</Value>
       </Dependency>
       <Dependency>
         <Key>tiles.png</Key>
-        <Value>2014-12-19T07:23:32.095-05:00</Value>
+        <Value>2014-12-22T10:58:46.3712-05:00</Value>
       </Dependency>
       <Request>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\badguypalette.xnb</Request>
       <Request>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\tiles.xnb</Request>
@@ -72,7 +72,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\ItalianGuys\bin\x86\Debug\Content\badguypalette.xnb</Output>
-      <Time>2014-12-19T07:35:34.499-05:00</Time>
+      <Time>2014-12-22T07:35:15.3352-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -88,7 +88,7 @@
     <Assemblies>
       <Assembly>
         <Key>C:\Users\EAHSCS\Documents\GitHub\ItalianGuys\ItalianGuys\ItalianGuys\xTile.Pipeline.dll</Key>
-        <Value>2014-12-19T07:23:32.128-05:00</Value>
+        <Value>2014-12-22T07:35:15.3552-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>

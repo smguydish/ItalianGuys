@@ -14,7 +14,7 @@ namespace ItalianGuys
 
         public bool Dead = false;
 
-        private xTile.Map map;
+        protected xTile.Map map;
 
         private Color tintColor = Color.White;
         private float rotation = 0.0f;
@@ -138,14 +138,21 @@ namespace ItalianGuys
         }
 
 
-        public virtual xTile.Tiles.Tile CollisionEdgeTest(Vector2 point1, Vector2 point2)
+        public virtual KeyValuePair<xTile.Tiles.Tile, Vector2> CollisionEdgeTest(Vector2 point1, Vector2 point2)
         {
+            Vector2 point3 = (point1 + point2) / 2;
+
             xTile.Tiles.Tile tile1 = CollisionTest(point1);
             xTile.Tiles.Tile tile2 = CollisionTest(point2);
-            xTile.Tiles.Tile tile3 = CollisionTest((point1+point2)/2);
+            xTile.Tiles.Tile tile3 = CollisionTest(point3);
+
+            Vector2 cpoint1 = new Vector2((int)((point1.X) / 48f), (int)(point1.Y / 48));
+            Vector2 cpoint2 = new Vector2((int)((point2.X) / 48f), (int)(point2.Y / 48));
+            Vector2 cpoint3 = new Vector2((int)((point3.X) / 48f), (int)(point3.Y / 48));
+
 
             if (tile3 != null)
-                return tile3;
+                return new KeyValuePair<xTile.Tiles.Tile,Vector2>(tile3, cpoint3);
 
             if (tile1 != null && tile2 != null)
             {
@@ -154,15 +161,15 @@ namespace ItalianGuys
                 float dist2 = Vector2.Distance(point2, Center);
 
                 if (dist1 < dist2)
-                    return tile1;
+                    return new KeyValuePair<xTile.Tiles.Tile,Vector2>(tile1, cpoint1);
                 else
-                    return tile2;
+                    return new KeyValuePair<xTile.Tiles.Tile,Vector2>(tile2, cpoint2);
             }
 
             if (tile1 != null)
-                return tile1;
+                return new KeyValuePair<xTile.Tiles.Tile, Vector2>(tile1, cpoint1); ;
 
-            return tile2;
+            return new KeyValuePair<xTile.Tiles.Tile, Vector2>(tile2, cpoint2); ;
         }
 
         public bool IsBoxColliding(Rectangle OtherBox)
@@ -177,6 +184,14 @@ namespace ItalianGuys
                 return true;
             else
                 return false;
+        }
+
+        public void AddAnimation(string name, AnimationStrip animation)
+        {
+            animations[name] = animation;
+
+            if (currentAnimation == null)
+                currentAnimation = name;
         }
 
         public void PlayAnimation(string name)

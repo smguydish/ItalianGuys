@@ -16,6 +16,7 @@ namespace ItalianGuys
         private int frameCount;
 
         private int startx;
+        private int starty = 0;
 
         private float frameTimer = 0f;
         private float frameDelay = 0.05f;
@@ -88,7 +89,7 @@ namespace ItalianGuys
             {
                 return new Rectangle(
                     currentFrame * frameWidth + startx,
-                    0,
+                    starty,
                     frameWidth,
                     frameHeight);
             }
@@ -115,6 +116,19 @@ namespace ItalianGuys
             this.name = name;
             this.frameCount = frameCount;
             this.startx = startx;
+        }
+
+        public AnimationStrip(Texture2D texture, string name, Rectangle source, int frameCount)
+        {
+            //int frameWidth, 
+
+            this.texture = texture;
+            this.frameWidth = source.Width;
+            this.frameHeight = source.Height;
+            this.name = name;
+            this.frameCount = frameCount;
+            this.startx = source.X;
+            this.starty = source.Y;
         }
 
         #endregion

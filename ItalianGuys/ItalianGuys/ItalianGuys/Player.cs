@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using xTile.Tiles;
 
 namespace ItalianGuys
 {
@@ -25,14 +26,18 @@ namespace ItalianGuys
         public bool onGround = false;
         public bool isBig = true;
 
+        private ParticleManager particleManager;
+
         public Player(
            ContentManager content,
            Vector2 location,
            Vector2 velocity,
-           xTile.Map map)
+           xTile.Map map,
+           ParticleManager particleManager)
             : base(location, velocity, map)
         {
-            // mario, new Rectangle(0, 0, 48, 48)
+            // mario, new Rectangle(0, 0, 48, 48
+            this.particleManager = particleManager;
 
             animations.Add("idle",
                 new AnimationStrip(
@@ -158,9 +163,11 @@ namespace ItalianGuys
             }
 
             // Check collision below
-            xTile.Tiles.Tile tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height + 1),
+            KeyValuePair<xTile.Tiles.Tile, Vector2> ctest = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height + 1),
                                                       new Vector2(this.Location.X+this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height + 1)
                                                       );
+
+            xTile.Tiles.Tile tile = ctest.Key;
 
             if (tile != null && !tile.Properties.ContainsKey("Passable"))
             {
@@ -198,7 +205,8 @@ namespace ItalianGuys
 
 
                 // Check collision above
-                tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y));
+                ctest = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y));
+                tile = ctest.Key;
 
                 if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
@@ -207,6 +215,29 @@ namespace ItalianGuys
                     {
                         this.velocity.Y = 0.01f;
                         this.location.Y = (int)(this.Center.Y / 48) * 48;
+
+                        xTile.Layers.Layer layer = map.GetLayer("Foreground");
+
+                        if (tile.TileIndex >= 29 && tile.TileIndex <= 32)
+                        {
+                            if (isBig)
+                            {
+                                Vector2 loc = ctest.Value * 48;
+                                particleManager.SpawnParticle("block1", new Vector2(loc.X, loc.Y), new Vector2(-60, -650), 1200, 0f, true);
+                                particleManager.SpawnParticle("block2", new Vector2(loc.X + 24, loc.Y), new Vector2(60, -750), 1200, 0f, true);
+                                particleManager.SpawnParticle("block3", new Vector2(loc.X, loc.Y - 24), new Vector2(-20, -625), 1200, 0f, true);
+                                particleManager.SpawnParticle("block4", new Vector2(loc.X + 24, loc.Y - 24), new Vector2(20, -590), 1200, 0f, true);
+
+                                layer.Tiles[(int)ctest.Value.X, (int)ctest.Value.Y] = null;
+                            }
+                        }
+                        else if (tile.TileIndex >= 0 && tile.TileIndex <= 3)
+                        {
+                            layer.Tiles[(int)ctest.Value.X, (int)ctest.Value.Y] = new StaticTile(layer, tile.TileSheet, tile.BlendMode, 122);
+
+                            Vector2 loc = ctest.Value * 48;
+                            particleManager.SpawnParticle("coin", new Vector2(loc.X + 12, loc.Y - 24), new Vector2(0, -500), 600, 0f, true);
+                        }
                     }
                 }
 
@@ -254,7 +285,8 @@ namespace ItalianGuys
                 }
 
                 // Right collision test
-                tile = CollisionEdgeTest(new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y), new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height - 1));
+                ctest = CollisionEdgeTest(new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y), new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height - 1));
+                tile = ctest.Key;
 
                 if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
@@ -267,7 +299,8 @@ namespace ItalianGuys
                 }
 
                 // Left collision test
-                tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height - 1));
+                ctest = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height - 1));
+                tile = ctest.Key;
 
                 if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {

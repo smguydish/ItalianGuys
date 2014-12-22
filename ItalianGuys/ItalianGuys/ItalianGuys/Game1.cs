@@ -20,6 +20,7 @@ namespace ItalianGuys
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        ParticleManager particleManager;
 
         Map map;
         IDisplayDevice mapDisplayDevice;
@@ -72,8 +73,11 @@ namespace ItalianGuys
 
             World.viewport = new xTile.Dimensions.Rectangle(new xTile.Dimensions.Size(800, 600));
 
+            particleManager = new ParticleManager(map);
+            particleManager.LoadContent(Content);
+
             mario = Content.Load<Texture2D>("tiles");
-            player = new Player(this.Content, new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), Vector2.Zero, map);
+            player = new Player(this.Content, new Vector2(350, this.Window.ClientBounds.Height - (48 * 2) - 48), Vector2.Zero, map, particleManager);
 
             xTile.Layers.Layer elayer = map.GetLayer("Enemy");
             elayer.Visible = false;
@@ -112,6 +116,7 @@ namespace ItalianGuys
                     }
                 }
             }
+
         }
 
         /// <summary>
@@ -136,6 +141,7 @@ namespace ItalianGuys
 
             map.Update(gameTime.ElapsedGameTime.Milliseconds);
             player.Update(gameTime);
+            particleManager.Update(gameTime);
 
             for (int i = 0; i < enemies.Count; i++)
             {
@@ -184,7 +190,8 @@ namespace ItalianGuys
             {
                 enemies[i].Draw(spriteBatch);
             }
-            
+            particleManager.Draw(spriteBatch);
+
             spriteBatch.End();
 
             base.Draw(gameTime);

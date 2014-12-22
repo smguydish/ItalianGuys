@@ -84,9 +84,10 @@ namespace ItalianGuys
 
 
             // Check collision below
-            xTile.Tiles.Tile tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height + 1),
+            KeyValuePair<xTile.Tiles.Tile, Vector2> ctest = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height + 1),
                                                       new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height + 1)
                                                       );
+            xTile.Tiles.Tile tile = ctest.Key;
 
             if (tile != null && !tile.Properties.ContainsKey("Passable"))
             {
@@ -118,7 +119,8 @@ namespace ItalianGuys
 
 
                 // Right collision test
-                tile = CollisionEdgeTest(new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y), new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height - 1));
+                ctest = CollisionEdgeTest(new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y), new Vector2(this.Location.X + this.BoundingBoxRect.Width, this.Location.Y + this.BoundingBoxRect.Height - 1));
+                tile = ctest.Key;
 
                 if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
@@ -128,7 +130,8 @@ namespace ItalianGuys
                 }
 
                 // Left collision test
-                tile = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height - 1));
+                ctest = CollisionEdgeTest(new Vector2(this.Location.X, this.Location.Y), new Vector2(this.Location.X, this.Location.Y + this.BoundingBoxRect.Height - 1));
+                tile = ctest.Key;
 
                 if (tile != null && !tile.Properties.ContainsKey("Passable"))
                 {
